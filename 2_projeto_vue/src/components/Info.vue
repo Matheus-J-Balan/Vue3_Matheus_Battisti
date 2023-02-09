@@ -9,6 +9,9 @@
             <li>JavaScript</li>
             <li>SQLServer</li>
         </ul>
+        <div>
+            <button @click="showEmail">{{ textoBotao }}</button>
+        </div>
         <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
         <p>Para acessar meu portifólio basta <a v-bind:href="meu_link">clicar aqui</a></p>
         <Picture />
@@ -16,16 +19,31 @@
 </template>
 <script>
 import Picture from './Picture.vue'
-    export default{
-  components: { Picture },
-        name: 'Info',
-        data(){
-            return{
-                esta_trabalhando: true,
-                mostrar_email: true,
-                email: "matheus@outlook.com",
-                meu_link: "https://youtube.com"
+
+export default{
+    components: { 
+        Picture
+    },
+    name: 'Info',
+    data(){
+        return{
+            esta_trabalhando: true,
+            mostrar_email: false,
+            email: "matheus@outlook.com",
+            meu_link: "https://youtube.com",
+            textoBotao: "Mostrar e-mail"
+        }
+    },
+    methods: {
+        showEmail(){
+            this.mostrar_email = !this.mostrar_email
+            if(!this.mostrar_email)
+            {
+                this.textoBotao = 'Mostrar e-mail'
+            } else {
+                this.textoBotao = 'Esconder e-mail'
             }
         }
     }
+}
 </script>
