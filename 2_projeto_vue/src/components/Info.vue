@@ -10,16 +10,21 @@
             <li>SQLServer</li>
         </ul>
         <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
+        <p>Para acessar meu portifólio basta <a v-bind:href="meu_link">clicar aqui</a></p>
+        <Picture />
     </div>
 </template>
 <script>
+import Picture from './Picture.vue'
     export default{
+  components: { Picture },
         name: 'Info',
         data(){
             return{
                 esta_trabalhando: true,
                 mostrar_email: true,
-                email: "matheus@outlook.com"
+                email: "matheus@outlook.com",
+                meu_link: "https://youtube.com"
             }
         }
     }
