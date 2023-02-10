@@ -3,7 +3,7 @@ import PrimeiroComponente from './components/PrimeiroComponente.vue';
 
 <template>
   <div>
-    <Header />
+    <Header :esta_logado="false" />
     <PrimeiroComponente />
     <p class="paragrafo-pai">O dado de app é: {{ testando }}</p>
     <LifeCycle />
