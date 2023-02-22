@@ -23,7 +23,7 @@ import Header from './components/Header.vue'
         PrimeiroComponente,
         LifeCycle,
         Pessoa,
-            Header
+        Header
       },
       data(){
         return{
